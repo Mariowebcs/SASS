@@ -1,0 +1,35 @@
+.exercise {
+  border: 1px solid red;
+  margin: 0 auto;
+  text-align: center;
+}
+.exercise-title, .exercise-title_td {
+  color: green;
+}
+.exercise-title_td {
+  border-bottom: 1px solid blue;
+  display: inline-block;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+article {
+  border: 1px solid green;
+  margin: 0 0 1em 0;
+  padding: 1em 0;
+}
+
+article:nth-child(odd) {
+  color: blue;
+}
+
+article:nth-child(even) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
