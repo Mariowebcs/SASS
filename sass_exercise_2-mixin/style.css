@@ -1,0 +1,49 @@
+.title, .title_bb {
+  color: green;
+}
+.title_bb {
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-underline-offset: 5px;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid blue;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  margin: 0 1em;
+  text-align: center;
+}
+
+article {
+  border: 1px solid red;
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+.article-1,
+.article-3 {
+  color: blue;
+  border: 1px solid green;
+  font-size: 1rem;
+}
+
+.article-2,
+.article-4 {
+  color: red;
+  border: 1px solid green;
+  font-size: 1rem;
+}
+
+.footer {
+  color: green;
+  border: 1px solid blue;
+  font-size: 24px;
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
