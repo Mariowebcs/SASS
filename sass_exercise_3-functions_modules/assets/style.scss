@@ -1,0 +1,58 @@
+
+@use "function.scss" as f;
+@use "color-variables" as color;
+
+html,body{
+    font-size: 16px;
+}
+ 
+.title {
+    color: color.$color-primary;
+
+    &_bb {
+        @extend .title;
+        text-decoration: underline;
+        text-decoration-color: color.$color-secondary;
+        text-underline-offset: f.pixelToRem(5);
+        text-align: center;
+    }
+}
+
+.container {
+    border: f.pixelToRem(1) solid color.$color-secondary;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    margin: 0 f.pixelToRem(16);
+    text-align: center;
+}
+
+article {
+    border: f.pixelToRem(1) solid color.$color-tertiary;
+    margin: f.pixelToRem(16) 0;
+    padding: f.pixelToRem(16) 0;
+}
+
+
+@mixin layout($color, $border:color.$color-primary, $font-size:1rem) {
+    color: $color;
+    border: f.pixelToRem(1) solid $border;
+    font-size: $font-size;
+}
+
+.article-1,
+.article-3 {
+    @include layout(color.$color-secondary)
+}
+
+.article-2,
+.article-4 {
+    @include layout(color.$color-tertiary)
+}
+
+.footer {
+    @include layout(color.$color-primary, color.$color-secondary, f.pixelToRem(24));
+    flex-grow: 1;
+}

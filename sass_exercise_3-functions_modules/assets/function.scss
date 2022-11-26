@@ -1,0 +1,5 @@
+
+@function pixelToRem($size){
+    $unit : rem;
+    @return calc($size/16) + $unit;
+}
