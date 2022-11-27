@@ -1,0 +1,60 @@
+html,
+body {
+  font-size: 18px;
+}
+
+.center, .title, .subtitle_bd, .subtitle, .title_bb {
+  text-align: center;
+}
+
+.title, .subtitle_bd, .subtitle, .title_bb {
+  color: green;
+}
+.title_bb {
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-underline-offset: 0.3125rem;
+}
+
+.subtitle_bd {
+  border: 1px solid red;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.container {
+  border: 0.0625rem solid red;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  text-align: center;
+}
+
+article {
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.article, .article_red, .article_blue {
+  border: 0.0625rem solid green;
+}
+.article_blue {
+  color: blue;
+}
+.article_red {
+  color: red;
+}
+
+.footer {
+  color: green;
+  border: 0.0625rem solid blue;
+  font-size: 1.5rem;
+  flex-grow: 1;
+  margin: 0 0 1em 0;
+  padding: 0.8em 0;
+}
+
+/*# sourceMappingURL=style.css.map */
