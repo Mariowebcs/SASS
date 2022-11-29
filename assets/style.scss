@@ -1,0 +1,143 @@
+@use "function.scss"as f;
+@use "color-variables"as c;
+@use "sass:color" as color;
+
+
+html,
+body {
+    font-size: 16px;
+}
+
+.center {
+    text-align: center;
+}
+
+.title {
+    @extend .center;
+    color: c.$color-primary;
+
+
+    &_bb {
+        @extend .title;
+        text-decoration: underline;
+        text-decoration-color: c.$color-secondary;
+        text-underline-offset: f.pixelToRem(5);
+    }
+}
+
+.subtitle {
+    @extend .title;
+
+    &_bd {
+        @extend.title;
+        border: 1px solid c.$color-tertiary;
+        padding: 1rem;
+        display: inline-block;
+    }
+}
+
+
+
+.container {
+    border: f.pixelToRem(1) solid c.$color-tertiary;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    margin: 0 f.pixelToRem(16);
+    text-align: center;
+}
+
+.flex-numbers{
+    display: flex;
+    flex-direction: row;
+    padding: f.everyRem(1);
+    justify-content: space-between;
+}
+
+
+// EXTEND METHOD
+.article {
+    border: f.pixelToRem(1) solid c.$color-primary;
+    margin: f.pixelToRem(16) 0;
+    padding: f.pixelToRem(16) 0;
+    font-size: f.pixelToRem(18);
+    &_blue{
+        @extend .article;
+        color: blue;
+    }
+    &_red{
+        @extend .article;
+        color: red;
+    }
+}
+
+
+@mixin layout($color, $border:c.$color-primary, $font-size:1rem) {
+    color: $color;
+    border: f.pixelToRem(1) solid $border;
+    font-size: $font-size;
+}
+
+
+// FLOW CONTROL
+$sizes : 1,2,3;
+
+@each $size in $sizes {
+    .fs-#{$size}rem{
+       display: flex;
+       width: f.pixelToRem(45);
+       height: f.pixelToRem(45);
+       border: 1px solid c.$color-tertiary;
+       color: c.$color;
+       background: c.$bg-color;
+       font-size: $size + rem;
+    }
+}
+
+
+@for $index from 1 through 20{
+    // CLASS : .fs-1rem
+    $color : color.adjust(c.$color,$lightness : +5%*$index);
+    $bg-color : color.invert($color);
+    @if $index ==10{
+        $color : red;
+        $bg-color : blue;
+    }
+    
+        .flex-numbers {
+            div:nth-child(#{$index}){
+                color : $color;
+                background: $bg-color;
+        }
+          
+        }
+    } 
+
+    
+
+
+
+
+
+
+
+// COMMENTED FOR USING OTHER METHOD-->EXTEND METHOD
+
+// .article-1,
+// .article-3 {
+//     @include layout(color.$color-secondary)
+// }
+
+// .article-2,
+// .article-4 {
+//     @include layout(color.$color-tertiary)
+// }
+
+.footer {
+    @include layout(c.$color-primary, c.$color-secondary, f.pixelToRem(24));
+    flex-grow: 1;
+    margin: 0 0 1em 0;
+    padding: .8em 0;
+}
